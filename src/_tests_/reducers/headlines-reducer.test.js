@@ -20,4 +20,17 @@ describe('headlinesReducer' , () => {
             }
         )
     })
+
+
+    test('requesting headlines should sucessfully change isLoading from false to true', () => {
+        action = {
+            type: c.REQUEST_HEADLINES
+        };
+
+        expect(headlinesreducer(defaultState, action)).toEqual({
+            isLoading:true,
+            headlines:[],
+            error:null
+        })
+    })
 })
